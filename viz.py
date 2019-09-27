@@ -53,19 +53,19 @@ def main():
     for j in col_2:
         L.append(j)
 
-    data_viz.histogram(L, out_file_name)
+    #data_viz.histogram(L, out_file_name)
 
-    # try:
-    #    if plot == histogram:
-    #        data_viz.histogram(L, out_file_name)
-    #    if plot == boxplot:
-    #        data_viz.boxplot(L, out_file_name)
-    #    if plot == combo:
-    #        data_viz.combo(L, out_file_name)
+    try:
+        if plot == histogram:
+            data_viz.histogram(L, out_file_name)
+        if plot == boxplot:
+            data_viz.boxplot(L, out_file_name)
+        if plot == combo:
+            data_viz.combo(L, out_file_name)
 
-    # except NameError:
-    #    print('Plot type not available. Check help for available types')
-    #    sys.exit(1)
+    except NameError:
+        print('Plot type not available. Check help for available types')
+        sys.exit(1)
 
 
 if __name__ == '__main__':
