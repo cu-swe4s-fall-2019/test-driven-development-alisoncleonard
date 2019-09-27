@@ -14,7 +14,7 @@ before_install:
 
 script:
     - bash gen_data.sh
-    - python viz.py
+    - python viz.py --out_file hist.png --plot_type histogram
     - python get_data.py
     - python data_viz.py
     - python math_lib.py
