@@ -53,14 +53,12 @@ def main():
     for j in col_2:
         L.append(j)
 
-    #data_viz.histogram(L, out_file_name)
-
     try:
-        if plot == histogram:
+        if plot == "histogram":
             data_viz.histogram(L, out_file_name)
-        if plot == boxplot:
+        if plot == "boxplot":
             data_viz.boxplot(L, out_file_name)
-        if plot == combo:
+        if plot == "combo":
             data_viz.combo(L, out_file_name)
 
     except NameError:
