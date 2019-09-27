@@ -1,36 +1,28 @@
-"""Documentation for get_data.py
+"""get_data.py contains functions to import data
 
-
+    * read_stdin_col(col_num) - read columns of data from the standard in
+    and output the desired column into a list
 """
+
 import sys
 
-#how do you get something in standard in?
-#write tests with data already available
-
-#stdin_data = input('type tab separated data here: ')
-#print(stdin_data)
-
-
 def read_stdin_col(col_num):
-    """
+    """ Read data from stdin. Expects columns of numerical data.
+
+    Parameters
+    -----------
+    col_num : the column of data from stdin to collect
+
+    Returns
+    --------
+    L : a list containing the specified column of data from stdin
 
     """
-    # read in stdin
-    data = sys.stdin.readline()
-    # split on ';' into rows
-    rows = data.split(';')
-    # split on ' ' to divide columns
-    split_columns = [y.split() for y in rows]
-    # extract only the column of interest from each row
-    desired_column = []
-    for row in split_columns:
-        desired_column.append(row[col_num])
-    return desired_column
 
+    L = []
 
-#def main():
-#    A = read_stdin()
-#    print(A[0])
-
-#if __name__ == '__main__':
-#    main()
+    # stdin may come from gen_data.sh
+    for l in sys.stdin:
+        A = l.rstrip().split()
+        L.append(float(A[col_num]))
+    return L
